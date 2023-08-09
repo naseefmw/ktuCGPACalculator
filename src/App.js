@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Accordion from './components/Accordion'
+import Chart from './components/Chart'
 import './App.css'
 
 const App = () => {
@@ -64,6 +65,7 @@ const App = () => {
   return (
     <div className="center">
       <Accordion />
+      <Chart />
     </div>
   )
 }
