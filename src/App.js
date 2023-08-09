@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import Accordion from './components/Accordion'
+import './App.css'
 
 const App = () => {
   const [gpa, setGpa] = useState(0)
@@ -60,11 +62,8 @@ const App = () => {
   }
 
   return (
-    <div>
-      KTU CGPA Calculator
-      <br />
-      <button onClick={() => gpaCalc()}>click</button>
-      gpa = {gpa}
+    <div className="center">
+      <Accordion />
     </div>
   )
 }
