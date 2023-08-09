@@ -1,0 +1,54 @@
+{
+  "CSE": {
+    "semesterCredits": [17, 20],
+    "sem1": [
+      {
+        "code": "MAT101",
+        "name": "Linear Algebra and Calculus",
+        "credit": 4
+      },
+      {
+        "code": "PHT100/CYT100",
+        "name": "Engineering Physics A/Engineering Chemistry",
+        "credit": 4
+      },
+      {
+        "code": "EST100/EST110",
+        "name": "Engineering Mechanics/Engineering Graphics",
+        "credit": 3
+      },
+      {
+        "code": "EST120/EST130",
+        "name": "Basics of Civil & Mechanical Engineering/Basics of Electrical & Electronics Engineering",
+        "credit": 4
+      },
+      {
+        "code": "HUT101",
+        "name": "Life Skills",
+        "credit": 0
+      },
+      {
+        "code": "PHL120/CYL120",
+        "name": "Engineering Physics Lab/Engineering Chemistry Lab",
+        "credit": 1
+      },
+      {
+        "code": "ESL120/ESL130",
+        "name": "Civil & Mechanical Workshop/Electrical & Electronics Workshop",
+        "credit": 1
+      }
+    ],
+    "sem2": [
+      {
+        "code": "MAT102",
+        "name": "Vector Calculus &",
+        "credit": 4
+      },
+      {
+        "code": "EST102",
+        "name": "Programming in C",
+        "credit": 4
+      }
+    ]
+  }
+}
