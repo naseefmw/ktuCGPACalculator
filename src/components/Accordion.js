@@ -3,6 +3,7 @@ import * as Accordion from '@radix-ui/react-accordion'
 import classNames from 'classnames'
 import { ChevronDownIcon } from '@radix-ui/react-icons'
 import './styles.css'
+import Select from './Select'
 
 const data = require('../data.json')
 
@@ -28,7 +29,10 @@ const AccordionContent = React.forwardRef(
       {...props}
       ref={forwardedRef}
     >
-      <div className="AccordionContentText">{children}</div>
+      <div className="AccordionContentText">
+        {children}
+        <Select />
+      </div>
     </Accordion.Content>
   )
 )
@@ -57,11 +61,9 @@ const MyAccordion = () => (
 
     <Accordion.Item className="AccordionItem" value="item-3">
       <AccordionTrigger>Third Semester</AccordionTrigger>
-      <Accordion.Content className="AccordionContent">
-        <div className="AccordionContentText">
-          Yes! You can animate the Accordion with CSS or JavaScript.
-        </div>
-      </Accordion.Content>
+      <AccordionContent className="AccordionContent">
+        Yes! You can animate the Accordion with CSS or JavaScript.
+      </AccordionContent>
     </Accordion.Item>
   </Accordion.Root>
 )

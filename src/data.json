@@ -1,6 +1,6 @@
 {
   "CSE": {
-    "semesterCredits": [17, 20],
+    "semesterCredits": [17, 21],
     "sem1": [
       {
         "code": "MAT101",
@@ -8,18 +8,18 @@
         "credit": 4
       },
       {
-        "code": "PHT100/CYT100",
-        "name": "Engineering Physics A/Engineering Chemistry",
+        "code": "PHT100",
+        "name": "Engineering Physics A",
         "credit": 4
       },
       {
-        "code": "EST100/EST110",
-        "name": "Engineering Mechanics/Engineering Graphics",
+        "code": "EST100",
+        "name": "Engineering Mechanics",
         "credit": 3
       },
       {
-        "code": "EST120/EST130",
-        "name": "Basics of Civil & Mechanical Engineering/Basics of Electrical & Electronics Engineering",
+        "code": "EST120",
+        "name": "Basics of Civil & Mechanical Engineering",
         "credit": 4
       },
       {
@@ -28,13 +28,13 @@
         "credit": 0
       },
       {
-        "code": "PHL120/CYL120",
-        "name": "Engineering Physics Lab/Engineering Chemistry Lab",
+        "code": "PHL120",
+        "name": "Engineering Physics Lab",
         "credit": 1
       },
       {
         "code": "ESL120/ESL130",
-        "name": "Civil & Mechanical Workshop/Electrical & Electronics Workshop",
+        "name": "Civil & Mechanical Workshop",
         "credit": 1
       }
     ],
