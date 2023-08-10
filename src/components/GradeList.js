@@ -1,8 +1,12 @@
 import React from 'react'
-import AccordGroup from './Accordion'
+import AccordionGroup from './Accordion'
 import * as Accordion from '@radix-ui/react-accordion'
 
-const AccordRoot = ({ text, active, list, onChange, label }) => {
+const listOfGrades = ['S', 'A+', 'A', 'B+', 'B', 'C+', 'C', 'D', 'P', 'F']
+const label = 'Grades'
+const titles = ['First Semester', 'Second Semester']
+
+const AccordionRoot = ({ contents, active, onChange }) => {
   return (
     <Accordion.Root
       className="AccordionRoot"
@@ -10,37 +14,54 @@ const AccordRoot = ({ text, active, list, onChange, label }) => {
       defaultValue="item-1"
       collapsible
     >
-      <AccordGroup
-        text={text}
-        active={active}
-        list={list}
-        onChange={onChange}
-        label={label}
-      />
+      {titles.map((title, i) => (
+        <AccordionGroup
+          key={title}
+          title={title}
+          text={contents[i]}
+          active={active[i]}
+          onChange={onChange[i]}
+          list={listOfGrades}
+          label={label}
+        />
+      ))}
     </Accordion.Root>
   )
 }
 
-const GradeList = () => {
-  const [value, setValue] = React.useState(['Select Grade', 'Select Grade'])
-  const listofgrades = ['A', 'B', 'C', 'G']
-  const handleChange = (prop) => {
-    const newValue = value.map((v, i) => {
+const GradeList = ({ courseList }) => {
+  const [semOneGrades, setSemOneGrades] = React.useState(
+    Array(7).fill('Select Grade')
+  )
+  const [semTwoGrades, setSemTwoGrades] = React.useState(
+    Array(2).fill('Select Grade')
+  )
+
+  const handleSem1Change = (prop) => {
+    const updatedGrades = semOneGrades.map((grade, i) => {
       if (i === parseInt(prop[0])) {
-        return prop[1]
-      } else return v
+        return prop.slice(1)
+      } else return grade
     })
-    setValue(newValue)
-    console.log(newValue)
+    setSemOneGrades(updatedGrades)
+    console.log(updatedGrades)
   }
-  const text = ['first entry', 'second entry']
+  const handleSem2Change = (prop) => {
+    const updatedGrades = semTwoGrades.map((grade, i) => {
+      if (i === parseInt(prop[0])) {
+        return prop.slice(1)
+      } else return grade
+    })
+    setSemTwoGrades(updatedGrades)
+    console.log(updatedGrades)
+  }
+
   return (
-    <AccordRoot
-      text={text}
-      active={value}
-      list={listofgrades}
-      onChange={handleChange}
-      label={'Gradee'}
+    <AccordionRoot
+      contents={courseList}
+      active={[semOneGrades, semTwoGrades]}
+      list={listOfGrades}
+      onChange={[handleSem1Change, handleSem2Change]}
     />
   )
 }

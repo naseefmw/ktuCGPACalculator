@@ -1,57 +1,14 @@
 import { useState } from 'react'
-import Accordion from './components/GradeList'
+import GradeList from './components/GradeList'
 import Chart from './components/Chart'
 import './App.css'
 
 const App = () => {
-  const newCourse = {
-    id: 1,
-    name: 'Linear Algebra and Calculus',
-    credit: 4,
-  }
-
-  const [newGrade, setNewGrade] = useState({ 1: 'A' })
-
-  const handleChange = (event) => {
-    console.log('r', event.target.value)
-    //setNewGrade(prop)
-  }
-
-  const [gpa, setGpa] = useState(0)
-  const [grades, setGrades] = useState(['B', 'S', 'A+', 'B+', 'P', 'S', 'A+'])
-
-  const [semester1, setSem1] = useState([
-    {
-      code: 'MAT101',
-      gradeValue: 'Sbit',
-    },
-    {
-      code: 'PHT100',
-      gradeValue: 0,
-    },
-    {
-      code: 'EST100',
-      gradeValue: 0,
-    },
-    {
-      code: 'EST120',
-      gradeValue: 0,
-    },
-    {
-      code: 'HUT101',
-      gradeValue: 0,
-    },
-    {
-      code: 'PHL120',
-      gradeValue: 0,
-    },
-    {
-      code: 'ESL120',
-      gradeValue: 0,
-    },
-  ])
-
   const data = require('./data.json')
+  const courseData = [
+    data.CSE.sem1.map((c) => c.name),
+    data.CSE.sem2.map((c) => c.name),
+  ]
 
   const gpaScore = (grade) => {
     let score = 0
@@ -92,23 +49,11 @@ const App = () => {
     return score
   }
 
-  const gpaCalc = () => {
-    const base = data.CSE.sem1
-    let gpa = 0
-    let credits = 0
-    let i = 0
-    base.forEach((course) => {
-      gpa += course.credit * gpaScore(grades[i])
-      credits += course.credit
-      i++
-    })
-    gpa = (gpa / credits).toFixed(2)
-    setGpa(gpa)
-  }
-  //
+  const gpaCalc = () => {}
+
   return (
     <div className="center">
-      <Accordion grade={newGrade} handle={handleChange} course={newCourse} />
+      <GradeList courseList={courseData} />
       <Chart />
     </div>
   )

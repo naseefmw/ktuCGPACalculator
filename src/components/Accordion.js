@@ -19,10 +19,10 @@ const Content = ({ text, active, list, onChange, label, id }) => {
   )
 }
 
-const AccordionGroup = ({ text, active, list, onChange, label }) => {
+const AccordionGroup = ({ title, text, active, list, onChange, label }) => {
   return (
-    <Accordion.Item className="AccordionItem" value="item">
-      <AccordionTrigger>Second Semester</AccordionTrigger>
+    <Accordion.Item className="AccordionItem" value={title}>
+      <AccordionTrigger>{title}</AccordionTrigger>
       {text.map((t) => (
         <Content
           key={t}
