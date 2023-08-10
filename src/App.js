@@ -2,10 +2,55 @@ import { useState } from 'react'
 import Accordion from './components/Accordion'
 import Chart from './components/Chart'
 import './App.css'
+import Demo from './components/Select'
 
 const App = () => {
+  const newCourse = {
+    id: 1,
+    name: 'Linear Algebra and Calculus',
+    credit: 4,
+  }
+
+  const [newGrade, setNewGrade] = useState({ 1: 'A' })
+
+  const handleChange = (event) => {
+    console.log('r', event.target.value)
+    //setNewGrade(prop)
+  }
+
   const [gpa, setGpa] = useState(0)
   const [grades, setGrades] = useState(['B', 'S', 'A+', 'B+', 'P', 'S', 'A+'])
+
+  const [semester1, setSem1] = useState([
+    {
+      code: 'MAT101',
+      gradeValue: 'Sbit',
+    },
+    {
+      code: 'PHT100',
+      gradeValue: 0,
+    },
+    {
+      code: 'EST100',
+      gradeValue: 0,
+    },
+    {
+      code: 'EST120',
+      gradeValue: 0,
+    },
+    {
+      code: 'HUT101',
+      gradeValue: 0,
+    },
+    {
+      code: 'PHL120',
+      gradeValue: 0,
+    },
+    {
+      code: 'ESL120',
+      gradeValue: 0,
+    },
+  ])
 
   const data = require('./data.json')
 
@@ -61,10 +106,10 @@ const App = () => {
     gpa = (gpa / credits).toFixed(2)
     setGpa(gpa)
   }
-
+  //
   return (
     <div className="center">
-      <Accordion />
+      <Accordion grade={newGrade} handle={handleChange} course={newCourse} />
       <Chart />
     </div>
   )
