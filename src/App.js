@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import Accordion from './components/Accordion'
+import Accordion from './components/GradeList'
 import Chart from './components/Chart'
 import './App.css'
-import Demo from './components/Select'
 
 const App = () => {
   const newCourse = {

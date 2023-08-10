@@ -1,11 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import * as Select from '@radix-ui/react-select'
 import classnames from 'classnames'
-import {
-  CheckIcon,
-  ChevronDownIcon,
-  ChevronUpIcon,
-} from '@radix-ui/react-icons'
+import { CheckIcon } from '@radix-ui/react-icons'
 import './styles.css'
 const SelectItem = React.forwardRef(
   ({ children, className, ...props }, forwardedRef) => {

@@ -1,38 +1,15 @@
-import React, { useState } from 'react'
 import * as Select from '@radix-ui/react-select'
-import classnames from 'classnames'
 import SelectItem from './SelectItem'
-import {
-  CheckIcon,
-  ChevronDownIcon,
-  ChevronUpIcon,
-} from '@radix-ui/react-icons'
+import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
 import './styles.css'
-
-const Demo = () => {
-  const [value, setValue] = useState('Select Grade')
-  const listofgrades = ['A', 'B', 'C', 'G']
-  const handleChange = (event) => {
-    setValue(event[1])
-  }
-  return (
-    <SelectGrade
-      id={'1'}
-      active={value}
-      list={listofgrades}
-      onchange={handleChange}
-      label={'Gradess'}
-    />
-  )
-}
 
 const Item = ({ value, id }) => {
   return <SelectItem value={id.concat(value)}>{value}</SelectItem>
 }
 
-const SelectGrade = ({ active, list, onchange, label, id }) => {
+const SelectMenu = ({ active, list, onChange, label, id }) => {
   return (
-    <Select.Root value={active} onValueChange={onchange}>
+    <Select.Root value={active} onValueChange={onChange}>
       <Select.Trigger className="SelectTrigger">
         <Select.Value>{active}</Select.Value>
         <Select.Icon className="SelectIcon">
@@ -60,4 +37,4 @@ const SelectGrade = ({ active, list, onchange, label, id }) => {
     </Select.Root>
   )
 }
-export default SelectGrade
+export default SelectMenu
