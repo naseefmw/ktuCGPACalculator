@@ -4,51 +4,28 @@ import Chart from './components/Chart'
 import './App.css'
 
 const App = () => {
-  //SGPA
-  const [first, setFirst] = useState(0.0)
-  const [second, setSecond] = useState(0.0)
-  const [third, setThird] = useState(0.0)
-  const [fourth, setFourth] = useState(0.0)
-  const [fifth, setFifth] = useState(0.0)
-  const [sixth, setSixth] = useState(0.0)
-  const [seventh, setSeventh] = useState(0.0)
-  const [eighth, setEighth] = useState(0.0)
+  const [SGPA, setSGPA] = useState(Array(8).fill(0))
+  const [CGPA, setCGPA] = useState(0.0)
 
   useEffect(() => {
-    setFirst(JSON.parse(window.localStorage.getItem('first')))
-    setSecond(JSON.parse(window.localStorage.getItem('second')))
-    setThird(JSON.parse(window.localStorage.getItem('third')))
-    setFourth(JSON.parse(window.localStorage.getItem('fourth')))
-    setFifth(JSON.parse(window.localStorage.getItem('fifth')))
-    setSixth(JSON.parse(window.localStorage.getItem('sixth')))
-    setSeventh(JSON.parse(window.localStorage.getItem('seventh')))
-    setEighth(JSON.parse(window.localStorage.getItem('eighth')))
+    const value = window.localStorage.getItem('SGPA')
+    let valueParse = Array(8).fill(0)
+    if (value) {
+      valueParse = value.split(',').map((i) => parseFloat(i))
+      setSGPA(valueParse)
+    }
+    const value2 = window.localStorage.getItem('CGPA')
+    if (value2) {
+      const valueParse2 = parseFloat(value2)
+      console.log(valueParse2)
+      setCGPA(valueParse2)
+    }
   }, [])
 
   useEffect(() => {
-    window.localStorage.setItem('first', first)
-  }, [first])
-  useEffect(() => {
-    window.localStorage.setItem('second', second)
-  }, [second])
-  useEffect(() => {
-    window.localStorage.setItem('third', third)
-  }, [third])
-  useEffect(() => {
-    window.localStorage.setItem('fourth', fourth)
-  }, [fourth])
-  useEffect(() => {
-    window.localStorage.setItem('fifth', fifth)
-  }, [fifth])
-  useEffect(() => {
-    window.localStorage.setItem('sixth', sixth)
-  }, [sixth])
-  useEffect(() => {
-    window.localStorage.setItem('seventh', seventh)
-  }, [seventh])
-  useEffect(() => {
-    window.localStorage.setItem('eighth', eighth)
-  }, [eighth])
+    window.localStorage.setItem('SGPA', SGPA)
+    window.localStorage.setItem('CGPA', CGPA)
+  }, [SGPA, CGPA])
 
   const data = require('./data.json')
   const course = data.CSE
@@ -79,19 +56,12 @@ const App = () => {
     <div className="center">
       <GradeCard
         courseData={courseData}
-        setGpa={[
-          setFirst,
-          setSecond,
-          setThird,
-          setFourth,
-          setFifth,
-          setSixth,
-          setSeventh,
-          setEighth,
-        ]}
+        setSgpa={setSGPA}
+        sgpa={SGPA}
+        setCgpa={setCGPA}
       />
-      first={first},sec={second},third={third},fourth={fourth},fifth={fifth}
-      ,sixth={sixth},seventh={seventh},eight={eighth}
+      {SGPA} <br />
+      {CGPA}
       <Chart />
     </div>
   )
