@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import GradeCard from './components/GradeCard'
 import Chart from './components/Chart'
+import Button from './components/Button'
 import './App.css'
 
 const App = () => {
@@ -125,6 +126,18 @@ const App = () => {
     ],
   ]
 
+  const handleButton = () => {
+    setSGPA(Array(8).fill(0))
+    setCGPA(0.0)
+    setSem1Grades(Array(7).fill('Select Grade'))
+    setSem2Grades(Array(8).fill('Select Grade'))
+    setSem3Grades(Array(8).fill('Select Grade'))
+    setSem4Grades(Array(8).fill('Select Grade'))
+    setSem5Grades(Array(8).fill('Select Grade'))
+    setSem6Grades(Array(8).fill('Select Grade'))
+    setSem7Grades(Array(7).fill('Select Grade'))
+    setSem8Grades(Array(6).fill('Select Grade'))
+  }
   return (
     <div className="center">
       <GradeCard
@@ -156,6 +169,7 @@ const App = () => {
       {SGPA} <br />
       {CGPA}
       <Chart />
+      <Button text={'Clear'} onClick={handleButton} />
     </div>
   )
 }
