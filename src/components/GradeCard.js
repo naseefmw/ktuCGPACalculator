@@ -1,7 +1,14 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import AccordionRoot from './AccordionRoot'
 
-const GradeCard = ({ courseData, setSgpa, sgpa, setCgpa }) => {
+const GradeCard = ({
+  courseData,
+  setSgpa,
+  sgpa,
+  setCgpa,
+  gradeData,
+  setGrades,
+}) => {
   useEffect(() => {
     cgpaCalculator()
   })
@@ -75,28 +82,10 @@ const GradeCard = ({ courseData, setSgpa, sgpa, setCgpa }) => {
   const courseList = courseData[0]
   const credits = courseData[1]
 
-  const [sem1Grades, setSem1Grades] = useState(Array(7).fill('Select Grade'))
-  const [sem2Grades, setSem2Grades] = useState(Array(8).fill('Select Grade'))
-  const [sem3Grades, setSem3Grades] = useState(Array(8).fill('Select Grade'))
-  const [sem4Grades, setSem4Grades] = useState(Array(8).fill('Select Grade'))
-  const [sem5Grades, setSem5Grades] = useState(Array(8).fill('Select Grade'))
-  const [sem6Grades, setSem6Grades] = useState(Array(8).fill('Select Grade'))
-  const [sem7Grades, setSem7Grades] = useState(Array(7).fill('Select Grade'))
-  const [sem8Grades, setSem8Grades] = useState(Array(6).fill('Select Grade'))
-
   const cgpaCalculator = () => {
     let c_score = 0
     let c_credits = 0
-    const grades = [
-      sem1Grades,
-      sem2Grades,
-      sem3Grades,
-      sem4Grades,
-      sem5Grades,
-      sem6Grades,
-      sem7Grades,
-      sem8Grades,
-    ]
+    const grades = gradeData
     for (let i = 0; i < 8; i++) {
       if (grades[i].includes('Select Grade')) {
         break
@@ -114,96 +103,96 @@ const GradeCard = ({ courseData, setSgpa, sgpa, setCgpa }) => {
 
   const handleSem1Change = (prop) => {
     const id = 0
-    const updatedGrades = sem1Grades.map((grade, i) => {
+    const updatedGrades = gradeData[id].map((grade, i) => {
       if (i === parseInt(prop[0])) {
         return prop.slice(1)
       } else return grade
     })
-    setSem1Grades(updatedGrades)
+    setGrades[id](updatedGrades)
     cgpaCalculator()
     gpaCalc(updatedGrades, credits[id], totalCredits[id], setSgpa, sgpa, id)
   }
 
   const handleSem2Change = (prop) => {
     const id = 1
-    const updatedGrades = sem2Grades.map((grade, i) => {
+    const updatedGrades = gradeData[id].map((grade, i) => {
       if (i === parseInt(prop[0])) {
         return prop.slice(1)
       } else return grade
     })
-    setSem2Grades(updatedGrades)
+    setGrades[id](updatedGrades)
     gpaCalc(updatedGrades, credits[id], totalCredits[id], setSgpa, sgpa, id)
     cgpaCalculator()
   }
 
   const handleSem3Change = (prop) => {
     const id = 2
-    const updatedGrades = sem3Grades.map((grade, i) => {
+    const updatedGrades = gradeData[id].map((grade, i) => {
       if (i === parseInt(prop[0])) {
         return prop.slice(1)
       } else return grade
     })
-    setSem3Grades(updatedGrades)
+    setGrades[id](updatedGrades)
     gpaCalc(updatedGrades, credits[id], totalCredits[id], setSgpa, sgpa, id)
     cgpaCalculator()
   }
 
   const handleSem4Change = (prop) => {
     const id = 3
-    const updatedGrades = sem4Grades.map((grade, i) => {
+    const updatedGrades = gradeData[id].map((grade, i) => {
       if (i === parseInt(prop[0])) {
         return prop.slice(1)
       } else return grade
     })
-    setSem4Grades(updatedGrades)
+    setGrades[id](updatedGrades)
     gpaCalc(updatedGrades, credits[id], totalCredits[id], setSgpa, sgpa, id)
     cgpaCalculator()
   }
 
   const handleSem5Change = (prop) => {
     const id = 4
-    const updatedGrades = sem5Grades.map((grade, i) => {
+    const updatedGrades = gradeData[id].map((grade, i) => {
       if (i === parseInt(prop[0])) {
         return prop.slice(1)
       } else return grade
     })
-    setSem5Grades(updatedGrades)
+    setGrades[id](updatedGrades)
     gpaCalc(updatedGrades, credits[id], totalCredits[id], setSgpa, sgpa, id)
     cgpaCalculator()
   }
 
   const handleSem6Change = (prop) => {
     const id = 5
-    const updatedGrades = sem6Grades.map((grade, i) => {
+    const updatedGrades = gradeData[id].map((grade, i) => {
       if (i === parseInt(prop[0])) {
         return prop.slice(1)
       } else return grade
     })
-    setSem6Grades(updatedGrades)
+    setGrades[id](updatedGrades)
     gpaCalc(updatedGrades, credits[id], totalCredits[id], setSgpa, sgpa, id)
     cgpaCalculator()
   }
 
   const handleSem7Change = (prop) => {
     const id = 6
-    const updatedGrades = sem7Grades.map((grade, i) => {
+    const updatedGrades = gradeData[id].map((grade, i) => {
       if (i === parseInt(prop[0])) {
         return prop.slice(1)
       } else return grade
     })
-    setSem7Grades(updatedGrades)
+    setGrades[id](updatedGrades)
     gpaCalc(updatedGrades, credits[id], totalCredits[id], setSgpa, sgpa, id)
     cgpaCalculator()
   }
 
   const handleSem8Change = (prop) => {
     const id = 7
-    const updatedGrades = sem8Grades.map((grade, i) => {
+    const updatedGrades = gradeData[id].map((grade, i) => {
       if (i === parseInt(prop[0])) {
         return prop.slice(1)
       } else return grade
     })
-    setSem8Grades(updatedGrades)
+    setGrades[id](updatedGrades)
     gpaCalc(updatedGrades, credits[id], totalCredits[id], setSgpa, sgpa, id)
     cgpaCalculator()
   }
@@ -211,16 +200,7 @@ const GradeCard = ({ courseData, setSgpa, sgpa, setCgpa }) => {
   return (
     <AccordionRoot
       contents={courseList}
-      active={[
-        sem1Grades,
-        sem2Grades,
-        sem3Grades,
-        sem4Grades,
-        sem5Grades,
-        sem6Grades,
-        sem7Grades,
-        sem8Grades,
-      ]}
+      active={gradeData}
       list={listOfGrades}
       onChange={[
         handleSem1Change,
