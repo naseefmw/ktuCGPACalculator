@@ -73,8 +73,8 @@ const GradeCard = ({
     let sgpa = (score / totalCredits).toFixed(2)
     const updatedGPA = gpa.map((sem, i) => {
       if (i === id) {
-        return sgpa
-      } else return sem
+        return parseFloat(sgpa)
+      } else return parseFloat(sem)
     })
     setGpa(updatedGPA)
   }
@@ -96,7 +96,7 @@ const GradeCard = ({
       }
     }
     if (c_credits) {
-      let cgpa = (c_score / c_credits).toFixed(2)
+      let cgpa = parseFloat((c_score / c_credits).toFixed(2))
       setCgpa(cgpa)
     }
   }

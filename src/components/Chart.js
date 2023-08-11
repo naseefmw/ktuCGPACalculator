@@ -1,17 +1,21 @@
 import React from 'react'
 import { Chart } from 'react-google-charts'
 
-const data = [
-  ['Element', 'SGPA', { role: 'style' }],
-  ['S1', 8.94, '#b87333'], // RGB value
-  ['S2', 10.0, 'silver'], // English color name
-  ['S3', 9.3, 'gold'],
-  ['S4', 1.0, 'color: #e5e4e2'], // CSS-style declaration
-]
-
-const MyChart = () => {
+const MyChart = ({ values }) => {
+  const data = [
+    ['Element', 'SGPA', { role: 'style' }],
+    ['S1', values[0][0], 'orange'],
+    ['S2', values[0][1], 'silver'],
+    ['S3', values[0][2], 'gold'],
+    ['S4', values[0][3], 'black'],
+    ['S5', values[0][4], 'black'],
+    ['S6', values[0][5], 'black'],
+    ['S7', values[0][6], 'black'],
+    ['S8', values[0][7], 'black'],
+    ['CGPA', values[1], 'black'],
+  ]
   return (
-    <Chart chartType="ColumnChart" width="400px" height="300px" data={data} />
+    <Chart chartType="ColumnChart" width="500px" height="300px" data={data} />
   )
 }
 

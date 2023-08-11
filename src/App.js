@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import GradeCard from './components/GradeCard'
 import Chart from './components/Chart'
 import Button from './components/Button'
+import Summary from './components/Summary'
 import './App.css'
 
 const App = () => {
@@ -168,8 +169,9 @@ const App = () => {
       />
       {SGPA} <br />
       {CGPA}
-      <Chart />
+      <Chart values={[SGPA, CGPA]} />
       <Button text={'Clear'} onClick={handleButton} />
+      <Summary grades={[SGPA, CGPA]} />
     </div>
   )
 }
