@@ -3,7 +3,7 @@ import GradeCard from './components/GradeCard'
 import Chart from './components/Chart'
 import Button from './components/Button'
 import Summary from './components/Summary'
-import SelectMenu from './components/SelectMenu'
+import AppBar from './components/AppBar'
 import './App.css'
 
 const App = () => {
@@ -141,44 +141,43 @@ const App = () => {
     setSem8Grades(Array(6).fill('Select Grade'))
   }
   return (
-    <div className="center">
-      <SelectMenu
-        id={'11'}
-        active={'CSE'}
-        list={['CSE', 'coming soon...']}
-        label={'Department'}
-        onChange={() => console.log('change department')}
-      />
-      <GradeCard
-        gradeData={[
-          sem1Grades,
-          sem2Grades,
-          sem3Grades,
-          sem4Grades,
-          sem5Grades,
-          sem6Grades,
-          sem7Grades,
-          sem8Grades,
-        ]}
-        setGrades={[
-          setSem1Grades,
-          setSem2Grades,
-          setSem3Grades,
-          setSem4Grades,
-          setSem5Grades,
-          setSem6Grades,
-          setSem7Grades,
-          setSem8Grades,
-        ]}
-        courseData={courseData}
-        setSgpa={setSGPA}
-        sgpa={SGPA}
-        setCgpa={setCGPA}
-      />
-      <Chart values={[SGPA, CGPA]} />
-      <Button text={'Clear'} onClick={handleButton} />
-      <Summary gpa={[SGPA, CGPA]} />
-    </div>
+    <>
+      <AppBar />
+      <div className="outerbox">
+        <GradeCard
+          gradeData={[
+            sem1Grades,
+            sem2Grades,
+            sem3Grades,
+            sem4Grades,
+            sem5Grades,
+            sem6Grades,
+            sem7Grades,
+            sem8Grades,
+          ]}
+          setGrades={[
+            setSem1Grades,
+            setSem2Grades,
+            setSem3Grades,
+            setSem4Grades,
+            setSem5Grades,
+            setSem6Grades,
+            setSem7Grades,
+            setSem8Grades,
+          ]}
+          courseData={courseData}
+          setSgpa={setSGPA}
+          sgpa={SGPA}
+          setCgpa={setCGPA}
+        />
+
+        <div className="innerbox">
+          <Summary gpa={[SGPA, CGPA]} />
+          <Chart values={[SGPA, CGPA]} />
+          <Button text={'Clear'} onClick={handleButton} />
+        </div>
+      </div>
+    </>
   )
 }
 export default App

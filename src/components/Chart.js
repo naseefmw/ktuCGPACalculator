@@ -15,7 +15,15 @@ const MyChart = ({ values }) => {
     ['CGPA', values[1], 'black'],
   ]
   return (
-    <Chart chartType="ColumnChart" width="500px" height="300px" data={data} />
+    <div className="chart">
+      <Chart
+        chartType="ColumnChart"
+        width="fit-content"
+        height="300px"
+        data={data}
+        options={{ legend: { position: 'none' } }}
+      />
+    </div>
   )
 }
 
