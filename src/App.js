@@ -3,6 +3,7 @@ import GradeCard from './components/GradeCard'
 import Chart from './components/Chart'
 import Button from './components/Button'
 import Summary from './components/Summary'
+import SelectMenu from './components/SelectMenu'
 import './App.css'
 
 const App = () => {
@@ -141,6 +142,13 @@ const App = () => {
   }
   return (
     <div className="center">
+      <SelectMenu
+        id={'11'}
+        active={'CSE'}
+        list={['CSE', 'coming soon...']}
+        label={'Department'}
+        onChange={() => console.log('change department')}
+      />
       <GradeCard
         gradeData={[
           sem1Grades,
