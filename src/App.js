@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import GradeCard from './components/GradeCard'
 import Chart from './components/Chart'
 import './App.css'
@@ -13,6 +13,42 @@ const App = () => {
   const [sixth, setSixth] = useState(0.0)
   const [seventh, setSeventh] = useState(0.0)
   const [eighth, setEighth] = useState(0.0)
+
+  useEffect(() => {
+    setFirst(JSON.parse(window.localStorage.getItem('first')))
+    setSecond(JSON.parse(window.localStorage.getItem('second')))
+    setThird(JSON.parse(window.localStorage.getItem('third')))
+    setFourth(JSON.parse(window.localStorage.getItem('fourth')))
+    setFifth(JSON.parse(window.localStorage.getItem('fifth')))
+    setSixth(JSON.parse(window.localStorage.getItem('sixth')))
+    setSeventh(JSON.parse(window.localStorage.getItem('seventh')))
+    setEighth(JSON.parse(window.localStorage.getItem('eighth')))
+  }, [])
+
+  useEffect(() => {
+    window.localStorage.setItem('first', first)
+  }, [first])
+  useEffect(() => {
+    window.localStorage.setItem('second', second)
+  }, [second])
+  useEffect(() => {
+    window.localStorage.setItem('third', third)
+  }, [third])
+  useEffect(() => {
+    window.localStorage.setItem('fourth', fourth)
+  }, [fourth])
+  useEffect(() => {
+    window.localStorage.setItem('fifth', fifth)
+  }, [fifth])
+  useEffect(() => {
+    window.localStorage.setItem('sixth', sixth)
+  }, [sixth])
+  useEffect(() => {
+    window.localStorage.setItem('seventh', seventh)
+  }, [seventh])
+  useEffect(() => {
+    window.localStorage.setItem('eighth', eighth)
+  }, [eighth])
 
   const data = require('./data.json')
   const course = data.CSE
