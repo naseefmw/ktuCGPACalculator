@@ -1,6 +1,5 @@
 {
   "CSE": {
-    "semesterCredits": [17, 21],
     "sem1": [
       {
         "code": "MAT101",
@@ -41,14 +40,133 @@
     "sem2": [
       {
         "code": "MAT102",
-        "name": "Vector Calculus &",
+        "name": "Vector Calculus, Differential Equations and Transforms",
+        "credit": 4
+      },
+      { "code": "CYT100", "name": "Engineering Chemistry ", "credit": 4 },
+      { "code": "EST110", "name": "Engineering Graphics ", "credit": 3 },
+      {
+        "code": "EST130",
+        "name": "Basics Of Electrical & Electronics Engineering",
+        "credit": 4
+      },
+      { "code": "HUN102", "name": "Professional Communication", "credit": 0 },
+      { "code": "EST102", "name": "Programming In C", "credit": 4 },
+      { "code": "CYL120", "name": "Engineering Chemistry", "credit": 1 },
+      {
+        "code": "ESL130",
+        "name": "Electrical & Electronics Workshop",
+        "credit": 1
+      }
+    ],
+    "sem3": [
+      {
+        "code": "MAT203",
+        "name": "Discrete Mathematical Structures",
+        "credit": 4
+      },
+      { "code": "CST201", "name": "Data Structures", "credit": 4 },
+      { "code": "CST203", "name": "Logic System Design", "credit": 4 },
+      {
+        "code": "CST205",
+        "name": "Object Oriented Programming Using Java",
+        "credit": 4
+      },
+      { "code": "EST200", "name": "Design & Engineering", "credit": 2 },
+      { "code": "MCN201", "name": "Sustainable Engineering", "credit": 0 },
+      { "code": "CSL201", "name": "Data Structures Lab", "credit": 2 },
+      {
+        "code": "CSL203",
+        "name": "Object Oriented Programming Lab (In Java)",
+        "credit": 2
+      }
+    ],
+    "sem4": [
+      { "code": "MAT206", "name": "Graph Theory", "credit": 4 },
+      {
+        "code": "CST202",
+        "name": "Computer Organization and Architecture",
+        "credit": 4
+      },
+      { "code": "CST204", "name": "Database Management Systems", "credit": 4 },
+      { "code": "CST206", "name": "Operating Systems", "credit": 4 },
+      { "code": "HUT200", "name": "Professional Ethics", "credit": 2 },
+      { "code": "MCN202", "name": "Constitution Of India", "credit": 0 },
+      { "code": "CSL202", "name": "Digital Lab", "credit": 2 },
+      { "code": "CSL204", "name": "Operating Systems Lab", "credit": 2 }
+    ],
+    "sem5": [
+      {
+        "code": "CST301",
+        "name": "Formal Languages And Automata Theory",
+        "credit": 4
+      },
+      { "code": "CST303", "name": "Computer Networks", "credit": 4 },
+      { "code": "CST305", "name": "System Software", "credit": 4 },
+      {
+        "code": "CST307",
+        "name": "Microprocessors And Microcontrollers",
         "credit": 4
       },
       {
-        "code": "EST102",
-        "name": "Programming in C",
-        "credit": 4
+        "code": "CST309",
+        "name": "Management of Software Systems",
+        "credit": 3
+      },
+      { "code": "MCN301", "name": "Disaster Management", "credit": 0 },
+      {
+        "code": "CSL331",
+        "name": "System Software and Microprocessors Lab",
+        "credit": 2
+      },
+      {
+        "code": "CSL333",
+        "name": "Database Management Systems Lab",
+        "credit": 2
       }
+    ],
+    "sem6": [
+      { "code": "CST302", "name": "Compiler Design", "credit": 4 },
+      {
+        "code": "CST304",
+        "name": "Computer Graphics and Image Processing",
+        "credit": 4
+      },
+      {
+        "code": "CST306",
+        "name": "Algorithm Analysis and Design",
+        "credit": 4
+      },
+      { "code": "PE1", "name": "Program Elective I", "credit": 3 },
+      {
+        "code": "HUT300",
+        "name": "Industrial Economics & Foreign Trade",
+        "credit": 3
+      },
+      { "code": "CST308", "name": "Comprehensive Course Work", "credit": 1 },
+      { "code": "CSL332", "name": "Networking Lab", "credit": 2 },
+      { "code": "CSD334", "name": "Miniproject", "credit": 2 }
+    ],
+    "sem7": [
+      { "code": "CST401", "name": "Artificial Intelligence", "credit": 3 },
+      { "code": "PE2", "name": "Program Elective Ii", "credit": 3 },
+      { "code": "OE", "name": "Open Elective", "credit": 3 },
+      {
+        "code": "MCN401",
+        "name": "Industrial Safety Engineering",
+        "credit": 0
+      },
+      { "code": "CSL411", "name": "Compiler Lab", "credit": 2 },
+      { "code": "CSQ413", "name": "Seminar", "credit": 2 },
+      { "code": "CSD415", "name": "Project Phase I", "credit": 2 }
+    ],
+    "sem8": [
+      { "code": "CST402", "name": "Distributed Computing", "credit": 3 },
+      { "code": "PE3", "name": "Program Elective III", "credit": 3 },
+      { "code": "PE4", "name": "Program Elective IV", "credit": 3 },
+      { "code": "PE5", "name": "Program Elective V", "credit": 3 },
+      { "code": "CST404", "name": "Comprehensive Course Viva", "credit": 1 },
+      { "code": "CSD416", "name": "Project Phase II", "credit": 4 }
     ]
   }
 }
