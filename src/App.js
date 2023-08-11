@@ -175,11 +175,9 @@ const App = () => {
         sgpa={SGPA}
         setCgpa={setCGPA}
       />
-      {SGPA} <br />
-      {CGPA}
       <Chart values={[SGPA, CGPA]} />
       <Button text={'Clear'} onClick={handleButton} />
-      <Summary grades={[SGPA, CGPA]} />
+      <Summary gpa={[SGPA, CGPA]} />
     </div>
   )
 }
