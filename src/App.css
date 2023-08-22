@@ -1,13 +1,11 @@
 .outerbox {
   margin: auto;
   display: flex;
-  height: auto;
   width: auto;
-  justify-content: space-around;
   flex-wrap: wrap;
-  padding: 5% 5% 0 5%;
-  align-content: space-around;
-  align-items: center;
+  padding: 2%;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .innerbox {
@@ -15,7 +13,8 @@
   width: auto;
   flex-wrap: wrap;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  margin: auto;
-  padding-bottom: 5%;
+  margin: 0 auto;
+  margin-top: 2%;
 }

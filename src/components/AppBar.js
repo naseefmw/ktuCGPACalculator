@@ -13,13 +13,6 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             KTU CGPA CALCULATOR
           </Typography>
-          <SelectMenu
-            id={'11'}
-            active={'CSE'}
-            list={['CSE', 'coming soon...']}
-            label={'Select Department'}
-            onChange={() => console.log('change department')}
-          />
         </Toolbar>
       </AppBar>
     </>
