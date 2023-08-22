@@ -10,7 +10,7 @@ h3 {
 
 .AccordionRoot {
   border-radius: 6px;
-  margin: 15% 0;
+  margin: 15% auto;
   width: 50%;
   height: fit-content;
   min-width: 300px;

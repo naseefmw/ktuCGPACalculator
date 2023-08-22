@@ -139,6 +139,7 @@ const App = () => {
     setSem6Grades(Array(8).fill('Select Grade'))
     setSem7Grades(Array(7).fill('Select Grade'))
     setSem8Grades(Array(6).fill('Select Grade'))
+    window.localStorage.clear()
   }
   return (
     <>
